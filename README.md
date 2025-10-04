@@ -19,11 +19,30 @@ cd ai-provenance-tracker
 uv sync
 ````
 
-Run the uploader script (example):
+### Usage
+
+
 
 ```bash
-python src/uploader.py --file models/my_model.pkl --author "Alice" --desc "Iris classifier"
+# 1. Train a dummy model (Iris DecisionTree)
+python train_dummy_model.py
+
+# 2. Upload model (via CLI)
+python src/uploader.py --file models/iris_clf.pkl --author Alice --desc "Iris classifier"
+
+# 3. List registered models
+python src/registry_manager.py
+
+# 4. Evaluate the model on Iris dataset
+python src/evaluator.py --file models/iris_clf.pkl
+
+# 5. Start FastAPI server
+uvicorn src.api:app --reload
+
+# 6. Open the interactive docs to test inference
+# 👉 http://127.0.0.1:8000/docs
 ```
+
 
 ---
 

@@ -3,6 +3,9 @@ registry/
 models/
 data/
 
+# research
+research/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
